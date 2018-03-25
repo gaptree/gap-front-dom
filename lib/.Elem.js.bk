@@ -1,0 +1,23 @@
+import {oneElem} from 'gap-front-web';
+
+export class Elem {
+    constructor(elem) {
+        if (typeof elem === 'string') {
+            elem = oneElem(elem);
+        }
+
+        if (elem instanceof HTMLElement) {
+            this.elem = elem;
+        }
+
+        this.startup();
+        this.update();
+    }
+
+    startup() {}
+
+    update() {}
+
+    html() {
+    }
+}

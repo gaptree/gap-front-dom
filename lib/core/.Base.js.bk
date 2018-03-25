@@ -1,0 +1,14 @@
+export class Base {
+    constructor() {
+        this.elem = null;
+
+        this.buildElem();
+        this.init();
+    }
+
+    html() {
+    }
+
+    addClass() {
+    }
+}

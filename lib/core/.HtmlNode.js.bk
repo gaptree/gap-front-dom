@@ -1,0 +1,7 @@
+import {Dom} from './Dom.js';
+
+class Html extends Dom {
+    constructor(datq) {
+        this.elem = null;
+    }
+}
