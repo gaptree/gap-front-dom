@@ -1,11 +1,11 @@
 import {mount} from '../index.js';
-import {CustomDom} from '../__lib__/CustomDom.js';
+import {CustomVn} from '../__lib__/CustomVn.js';
 
-test('CustomDom', () => {
-    const customDom = new CustomDom({
+test('CustomVn', () => {
+    const customVn = new CustomVn({
         k1: 'val11'
     });
-    mount(document.body, customDom);
+    mount(document.body, customVn);
 
     expect(document.body.innerHTML).toBe('<div>'
         + '<div>hello world</div> '
@@ -13,7 +13,7 @@ test('CustomDom', () => {
         + '<div>Gap Tree</div>'
         + '</div>');
 
-    customDom.update({
+    customVn.update({
         style: 'k',
         k1: 'val21',
         k2: 'val22'

@@ -19,6 +19,7 @@
     "test": "yarn run eslint && yarn run jest"
   },
   "dependencies": {
+    "gap-front-event": "^1.0.1",
     "gap-front-web": "^1.0.1"
   }
 }

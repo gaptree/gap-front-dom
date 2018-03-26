@@ -1,15 +1,21 @@
 import {Div} from '../index.js';
 
-export class CustomDom extends Div {
+export class CustomVn extends Div {
     init() {
         this.div1 = new Div();
         this.div2 = new Div();
 
         this.div1.html`hello world`;
         this.div2.html`Gap Tree`;
+
+        this.buildHtml();
     }
 
-    render() {
+    onUpdate() {
+        this.buildHtml();
+    }
+
+    buildHtml() {
         this.html`
             ${this.div1}
             <ul class="${this.state.style}">
