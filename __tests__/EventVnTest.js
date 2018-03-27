@@ -13,7 +13,7 @@ test('EventVn', () => {
     expect(document.body.innerHTML).toBe('<div>'
         + '<div>hello world</div> '
         + '<ul class=""> <li>val1</li> <li></li> </ul> '
-        + '<input data-event="vne1" type="text" name="title" value="title1"> '
+        + '<input type="text" name="title" value="title1"> '
         + '<textarea name="desc">desc1</textarea> '
         + '<div>Gap Tree</div>'
         + '</div>');
@@ -34,7 +34,7 @@ test('EventVn', () => {
     expect(document.body.innerHTML).toBe('<div class="changed">'
         + '<div>hello world</div> '
         + '<ul class=""> <li>changed</li> <li>changed</li> </ul> '
-        + '<input data-event="vne1" type="text" name="title" value="title2"> '
+        + '<input type="text" name="title" value="title2"> '
         + '<textarea name="desc">desc2</textarea> '
         + '<div>Gap Tree</div>'
         + '</div>');

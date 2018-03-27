@@ -1572,8 +1572,8 @@ gap-front-event@^1.0.1:
   resolved "https://registry.yarnpkg.com/gap-front-event/-/gap-front-event-1.0.2.tgz#40e34baaec5736845ecfdac8d9a53aad5f5b0613"
 
 gap-front-web@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.0.2.tgz#2badc7f55c3add1b87fcc851953b8d27500322b0"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gap-front-web/-/gap-front-web-1.0.4.tgz#bbe08b084cbd3e2a1c60a1a3a52ecf8a8f48aa06"
 
 gauge@~2.7.3:
   version "2.7.4"
