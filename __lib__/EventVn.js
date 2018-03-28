@@ -8,9 +8,22 @@ export class EventVn extends Div
 
         this.div1.html`hello world`;
         this.div2.html`Gap Tree`;
+    }
 
-        this.buildHtml();
+    render() {
+        this.elem.html`
+            ${this.div1}
+            <ul class="${this.data.style}">
+                <li>${this.data.k1}</li>
+                <li>${this.data.k2}</li>
+            </ul>
+            <input type="text" name="title" value="${this.data.title}">
+            <textarea name="desc">${this.data.desc}</textarea>
+            ${this.div2}
+        `;
+    }
 
+    startup() {
         this.elem.oneElem('[name="title"]')
             .on('change', (e) => this.onChange(e))
             .on('click', (e) => this.onClick(e));
@@ -33,18 +46,5 @@ export class EventVn extends Div
 
     onClick(evt) {
         throw new Error(evt);
-    }
-
-    buildHtml() {
-        this.elem.html`
-            ${this.div1}
-            <ul class="${this.data.style}">
-                <li>${this.data.k1}</li>
-                <li>${this.data.k2}</li>
-            </ul>
-            <input type="text" name="title" value="${this.data.title}">
-            <textarea name="desc">${this.data.desc}</textarea>
-            ${this.div2}
-        `;
     }
 }

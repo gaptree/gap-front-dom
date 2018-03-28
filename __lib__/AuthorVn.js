@@ -4,15 +4,11 @@ export class AuthorVn extends Vnode
 {
     static get tag() { return 'p'; }
 
-    init() {
-        this.buildHtml();
-    }
-
     onUpdate() {
-        this.buildHtml();
+        this.render();
     }
 
-    buildHtml() {
+    render() {
         this.elem.html`
             <strong>${this.data.name}</strong>
         `;

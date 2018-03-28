@@ -8,8 +8,6 @@ export class OnUpdateVn extends Div
 
         this.div1.html`hello world`;
         this.div2.html`Gap Tree`;
-
-        this.buildHtml();
     }
 
     onUpdate() {
@@ -21,7 +19,7 @@ export class OnUpdateVn extends Div
         this.elem.oneElem('[name="desc"]').setVal(this.data.desc);
     }
 
-    buildHtml() {
+    render() {
         this.elem.html`
             ${this.div1}
             <ul class="${this.data.style}">

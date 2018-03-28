@@ -3,7 +3,7 @@ import {AuthorVn} from './AuthorVn.js';
 
 export class BookVn extends Div
 {
-    init() {
+    render() {
         this.elem.html`
             <div class="user">
                 ${this.vn('author', AuthorVn, {name: 'miao'})}

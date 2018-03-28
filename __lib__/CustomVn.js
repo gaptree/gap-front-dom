@@ -7,15 +7,13 @@ export class CustomVn extends Div {
 
         this.div1.html`hello world`;
         this.div2.html`Gap Tree`;
-
-        this.buildHtml();
     }
 
     onUpdate() {
-        this.buildHtml();
+        this.render();
     }
 
-    buildHtml() {
+    render() {
         this.elem.html`
             ${this.div1}
             <ul class="${this.data.style}">
