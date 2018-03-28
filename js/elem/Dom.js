@@ -43,7 +43,7 @@ export class Dom {
                 throw new Error('cannot find child: ' + domId);
             }
 
-            holder.replaceWith(child.getElem());
+            holder.replace(child.getElem());
         });
     }
 

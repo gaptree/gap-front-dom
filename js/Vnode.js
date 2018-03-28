@@ -7,11 +7,57 @@ export class Vnode extends ElemAdapter {
         super();
 
         this.data = {};
-        this.vns = {};
+        this.map = {};
         this._vnId = 'gvn' + VnIdIndex++;
 
-        this.load(data);
+        this._load(data);
         this.init();
+        this.render();
+        this._regElem();
+        this._mapping();
+        this.startup();
+    }
+
+    // protected functions
+    _load(data) {
+        Object.assign(this.data, data);
+        return this;
+    }
+
+    _regElem() {
+        this.elem.update = (data) => this.update(data);
+    }
+
+    _mapping() {
+        this.elem.allElem(`[vn="${this.vnId}"]`).forEach(elem => {
+            const key = elem.getAttribute('key');
+
+            if (this.map[key]) {
+                elem.replace(this.map[key]);
+                return;
+            }
+
+            this.map[key] = elem;
+        });
+    }
+
+    d(key) {
+        return `vn="${this.vnId}" key="${key}"`;
+    }
+
+    vn(key, vnodeClass, params) {
+        const html = `<input type="hidden" ${this.d(key)}>`;
+
+        if (this.map.hasOwnProperty(key)) {
+            return html;
+        }
+
+        this.map[key] = (new vnodeClass(params)).elem;
+        return html;
+    }
+
+    get(key) {
+        return this.map[key];
     }
 
     // getter & setter
@@ -20,26 +66,14 @@ export class Vnode extends ElemAdapter {
     }
 
     // public function
-    load(data) {
-        Object.assign(this.data, data);
-        return this;
-    }
-
     update(data) {
-        this.load(data);
+        this._load(data);
         this.onUpdate();
-    }
-
-    insert(name, vnode) {
-        this.vns[name] = vnode;
-        return vnode.elem;
-    }
-
-    getVn(name) {
-        return this.vns[name] || null;
     }
 
     // to implement
     init() {}
+    render() {}
+    startup() {}
     onUpdate() {}
 }

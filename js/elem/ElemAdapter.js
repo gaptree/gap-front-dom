@@ -14,9 +14,11 @@ export class ElemAdapter {
         return this._elem;
     }
 
+    /*
     set elem(elem) {
         this._elem = elem;
     }
+    */
 
     append(item) {
         if (!(item instanceof ElemAdapter)) {
